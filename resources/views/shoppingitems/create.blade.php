@@ -52,7 +52,7 @@
         <h1 class="text-center">{{ __(' Your Shoppinglists') }}</h1>
         <ul>
             @foreach($shoppinglists as $shoppinglist)
-                <li><a href="/shoppings/show">{{ $shoppinglist->title }}</a></li>
+                <li><a href="/shoppingitems/show/{{ $shoppinglist->id }}">{{ $shoppinglist->title }}</a></li>
             @endforeach
         </ul>
     </div>
