@@ -26,8 +26,12 @@ class ShoppingitemController extends Controller
     public function create()
     {
         $shoppinglists = Shoppinglist::orderBy('title')->get();
+        $shoppingitems = Shoppingitem::orderBy('name')->get();
+
+
         return view('/shoppingitems/create', [
-            'shoppinglists'     => $shoppinglists
+            'shoppinglists'     => $shoppinglists,
+            'shoppingitems'     => $shoppingitems
         ]);
     }
 
@@ -59,11 +63,11 @@ class ShoppingitemController extends Controller
      */
     public function show(Shoppingitem $shoppingitem)
     {
-        $shoppinglists = Shoppinglist::orderBy('title')->get();
+        // $shoppinglists = Shoppinglist::orderBy('title')->get();
 
-        return view('/shoppingitems/show', [
-            'shoppinglists'     => $shoppinglists
-        ]);
+        // return view('/shoppingitems/show', [
+        //     'shoppinglists'     => $shoppinglists
+        // ]);
     }
 
     /**
