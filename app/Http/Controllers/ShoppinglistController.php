@@ -24,7 +24,7 @@ class ShoppinglistController extends Controller
      */
     public function create()
     {
-        //
+        return view('/shoppinglists/create');
     }
 
     /**
@@ -35,7 +35,13 @@ class ShoppinglistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validData = $request->validate([
+            'title' => 'required'
+        ]);
+
+        $shoppinglist = Shoppinglist::create($validData);
+
+        return redirect('/shoppingitems/create');
     }
 
     /**
