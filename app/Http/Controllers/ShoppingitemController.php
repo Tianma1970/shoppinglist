@@ -39,7 +39,16 @@ class ShoppingitemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validData = $request->validate([
+            'shoppinglist_id'   => 'required',
+            'name'              => 'required',
+            'quantity'          => 'required',
+            'category'          => 'required'
+        ]);
+
+        $shoppingitem = Shoppingitem::create($validData);
+
+        return redirect('shoppingitems/create');
     }
 
     /**
