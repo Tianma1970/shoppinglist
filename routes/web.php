@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/shoppinglists/create', 'ShoppinglistController@create');
+Route::post('/shoppinglist/store', 'ShoppinglistController@store');
+
+Route::get('/shoppingitems/create', 'ShoppingitemController@create');
+Route::post('/shoppingitems/store', 'ShoppingitemController@store');
