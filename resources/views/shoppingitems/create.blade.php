@@ -3,6 +3,7 @@
 @section('content')
 
 <div class="container">
+    @include('partials/status')
     <div class="jumbotron col-10">
         <h1 class="text-center">{{ __('Add some Shopping items') }}</h1>
 

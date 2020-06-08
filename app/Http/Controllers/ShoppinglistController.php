@@ -41,7 +41,7 @@ class ShoppinglistController extends Controller
 
         $shoppinglist = Shoppinglist::create($validData);
 
-        return redirect('/shoppingitems/create');
+        return redirect('/shoppingitems/create')->with('status', 'Shoppinglist created successfully');
     }
 
     /**

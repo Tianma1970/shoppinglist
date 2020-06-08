@@ -52,7 +52,7 @@ class ShoppingitemController extends Controller
 
         $shoppingitem = Shoppingitem::create($validData);
 
-        return redirect('shoppingitems/create');
+        return redirect('shoppingitems/create')->with('status', 'Shopping item created successfully');
     }
 
     /**

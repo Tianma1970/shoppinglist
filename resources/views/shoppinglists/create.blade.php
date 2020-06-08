@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+    @include('partials/status')
     <div class="jumbotron col-md-10">
         <h1 class="text-center">{{ __('Create a Shoppinglist') }}</h1>
         <form method="post" action="/shoppinglist/store">
