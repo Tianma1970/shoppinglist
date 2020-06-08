@@ -59,7 +59,11 @@ class ShoppingitemController extends Controller
      */
     public function show(Shoppingitem $shoppingitem)
     {
-        //
+        $shoppinglists = Shoppinglist::orderBy('title')->get();
+
+        return view('/shoppingitems/show', [
+            'shoppinglists'     => $shoppinglists
+        ]);
     }
 
     /**
