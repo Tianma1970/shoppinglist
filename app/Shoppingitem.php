@@ -12,4 +12,9 @@ class Shoppingitem extends Model
         'quantity',
         'category'
     ];
+
+    public function shoppinglist()
+    {
+        return $this->belongsTo(Shoppinglist::class);
+    }
 }

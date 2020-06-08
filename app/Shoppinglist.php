@@ -9,4 +9,9 @@ class Shoppinglist extends Model
     protected $fillable = [
         'title'
     ];
+
+    public function shoppingitems()
+    {
+        return $this->hasMany(Shoppingitem::class);
+    }
 }
