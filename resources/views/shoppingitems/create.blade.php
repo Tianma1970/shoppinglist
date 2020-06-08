@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="jumbotron col-10">
-        <h1 class="text-center">{{ __('Create your Shoppinglist') }}</h1>
+        <h1 class="text-center">{{ __('Add some Shopping items') }}</h1>
 
         <form method="POST" action="/shoppingitems/store">
             <!--We need to set a csrf-token (Cross site request forgery)in order to send the form-->
@@ -48,13 +48,27 @@
         </form>
     </div>
 
-    <div class="jumbotron col-10">
+    <div class="row">
+        <div class="jumbotron col-5">
         <h1 class="text-center">{{ __(' Your Shoppinglists') }}</h1>
         <ul>
             @foreach($shoppinglists as $shoppinglist)
                 <li><a href="/shoppingitems/show/{{ $shoppinglist->id }}">{{ $shoppinglist->title }}</a></li>
             @endforeach
         </ul>
+        </div>
+
+        <div class="jumbotron col-5">
+            <h1 class="text-center">{{ __('Your Shoppingitems') }}</h1>
+            <ul>
+                @foreach($shoppingitems as $shoppingitem)
+                        {{ __('Name: ') }}{{ $shoppingitem->name }}<br>
+                        {{ __('Category: ') }}{{ $shoppingitem->category }}<br>
+                        {{ __('Quantity: ') }}{{ $shoppingitem->quantity }}<br>
+                        {{ __('Shoppinglist: ') }}{{ $shoppingitem->shoppinglist->title }}</li><hr>
+                @endforeach
+            </ul>
+        </div>
     </div>
 </div>
 
