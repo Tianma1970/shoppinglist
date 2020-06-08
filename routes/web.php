@@ -24,4 +24,4 @@ Route::post('/shoppinglist/store', 'ShoppinglistController@store');
 Route::get('/shoppingitems/create', 'ShoppingitemController@create');
 Route::post('/shoppingitems/store', 'ShoppingitemController@store');
 
-Route::get('/shoppingitems/show/{shoppingitem}', 'ShoppingitemController@show');
+Route::get('/shoppinglists/show/{shoppingitem}', 'ShoppinglistController@show');
