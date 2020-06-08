@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Shoppinglist;
 use App\Shoppingitem;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,10 @@ class ShoppingitemController extends Controller
      */
     public function create()
     {
-        //
+        $shoppinglists = Shoppinglist::orderBy('title')->get();
+        return view('/shoppingitems/create', [
+            'shoppinglists'     => $shoppinglists
+        ]);
     }
 
     /**
