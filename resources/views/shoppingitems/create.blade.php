@@ -6,7 +6,7 @@
     <div class="jumbotron col-10">
         <h1 class="text-center">{{ __('Create your Shoppinglist') }}</h1>
 
-        <form method="POST" action="/shoppings/store">
+        <form method="POST" action="/shoppingitems/store">
             <!--We need to set a csrf-token (Cross site request forgery)in order to send the form-->
             @csrf
             <!--/We need to set a csrf-token in order to send the form-->
@@ -44,7 +44,7 @@
                     <input type="textarea" name ="quantity" id="quantity" class="form-control" placeholder="Number of Shopping Items">
                 </div>
             </div>
-            <input type="submit" class="btn btn-info" value="Save yor Shopping list">
+            <input type="submit" class="btn btn-info" value="Save your Shopping item">
         </form>
     </div>
 
