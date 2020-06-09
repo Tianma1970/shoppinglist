@@ -21,5 +21,6 @@ Route::resource('/shoppinglists', 'ShoppinglistController');
 Route::get('/shoppinglists/create', 'ShoppinglistController@create');
 Route::post('/shoppinglist/store', 'ShoppinglistController@store');
 
+Route::post('/shoppingitem/delete', 'ShoppingitemController@deleteMany');
 Route::get('/shoppingitems/create', 'ShoppingitemController@create');
 Route::post('/shoppingitems/store', 'ShoppingitemController@store');
