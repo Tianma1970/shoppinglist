@@ -5,7 +5,7 @@
 <div class="container">
     @include('/partials/status')
     <form method = "Post" action ="/shoppingitem/delete">
-        <div class="jumbotron col-md-8">
+        <div class="jumbotron col-md-12">
             @csrf
             <h1 class="text-center">{{ $shoppinglist->title }}</h1>
             <ol>
@@ -19,9 +19,11 @@
             </ol>
             <small><i>{{ __('list created at: ') }}{{ $shoppinglist->created_at }}</i></small>
         </div>
-        <a href="/shoppingitems/create" class=" btn btn-success">{{ __('Add some Shoppingitems') }}</a>
+        <a href="/shoppingitems/create" class=" btn btn-info">{{ __('Add some Shoppingitems') }}</a>
         <input type="submit" class=" btn btn-danger" value="Delete selected Item">
         <a href="/shoppingitems/create" class="btn btn-info">{{ __('Back') }}</a>
     </form>
+
+    @include('/templates/footer')
 </div>
 @endsection

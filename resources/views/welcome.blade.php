@@ -6,6 +6,8 @@
         <h1 class="text-center">{{ __('Welcome to Shoppinglist') }}</h1>
         <p class="text-center">{{ __('Here you can create your Shoppinglist') }}</p>
     </div>
+
+    @include('/templates/footer')
 </div>
 
 @endsection

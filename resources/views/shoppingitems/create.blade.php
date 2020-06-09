@@ -4,7 +4,7 @@
 
 <div class="container">
     @include('partials/status')
-    <div class="jumbotron col-10">
+    <div class="jumbotron col-12">
         @if (count($shoppinglists) > 0)
         <h1 class="text-center">{{ __('Add some Shopping items') }}</h1>
 
@@ -51,7 +51,7 @@
     </div>
 
     <div class="row">
-        <div class="jumbotron col-10">
+        <div class="jumbotron col-12">
         <h1 class="text-center">{{ __(' Your Shoppinglists') }}</h1>
             <ul>
                 @foreach($shoppinglists as $shoppinglist)
@@ -64,6 +64,7 @@
         <a href="/shoppinglists/create" class="btn btn-success">{{ __('Create your first Shoppinglist') }}</a>
         @endif
     </div>
+    @include('/templates/footer')
 </div>
 
 

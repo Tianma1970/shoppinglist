@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     @include('partials/status')
-    <div class="jumbotron col-md-10">
+    <div class="jumbotron col-md-12">
         <h1 class="text-center">{{ __('Create a Shoppinglist') }}</h1>
         <form method="post" action="/shoppinglist/store">
             <!--We need to set a csrf token in order to send the form-->
@@ -17,5 +17,6 @@
             </div>
         </form>
     </div>
+    @include('/templates/footer')
 </div>
 @endsection
