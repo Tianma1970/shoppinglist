@@ -13,7 +13,7 @@
                 <div class="col-md-6">
                     <input type="textarea" name ="title" id="quantity" class="form-control" placeholder="The title of your Shoppinglist">
                 </div>
-                <input type="submit" class="btn btn-info" value="Save yor Shopping list">
+                <input type="submit" class="btn btn-info" value="Save your Shopping list">
             </div>
         </form>
     </div>
