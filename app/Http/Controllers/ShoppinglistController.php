@@ -53,7 +53,13 @@ class ShoppinglistController extends Controller
      */
     public function show(Shoppinglist $shoppinglist)
     {
-        //
+        $shoppingitems = $shoppinglist->shoppingitem;
+        //$Shoppinglist = Shoppinglist::findOrFail($id);
+
+        return view('/shoppinglists/show', [
+            'shoppingitems'  => $shoppingitems,
+            'shoppinglist'  => $shoppinglist
+        ]);
     }
 
     /**
