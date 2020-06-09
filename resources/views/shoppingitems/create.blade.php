@@ -5,6 +5,7 @@
 <div class="container">
     @include('partials/status')
     <div class="jumbotron col-10">
+        @if (count($shoppinglists) > 0)
         <h1 class="text-center">{{ __('Add some Shopping items') }}</h1>
 
         <form method="POST" action="/shoppingitems/store">
@@ -50,26 +51,18 @@
     </div>
 
     <div class="row">
-        <div class="jumbotron col-5">
+        <div class="jumbotron col-10">
         <h1 class="text-center">{{ __(' Your Shoppinglists') }}</h1>
-        <ul>
-            @foreach($shoppinglists as $shoppinglist)
-                <li><a href="/shoppinglists/{{ $shoppinglist->id }}">{{ $shoppinglist->title }}</a></li>
-            @endforeach
-        </ul>
-        </div>
-
-        <div class="jumbotron col-5">
-            <h1 class="text-center">{{ __('Your Shoppingitems') }}</h1>
             <ul>
-                @foreach($shoppingitems as $shoppingitem)
-                        {{ __('Name: ') }}{{ $shoppingitem->name }}<br>
-                        {{ __('Category: ') }}{{ $shoppingitem->category }}<br>
-                        {{ __('Quantity: ') }}{{ $shoppingitem->quantity }}<br>
-                        {{ __('Shoppinglist: ') }}{{ $shoppingitem->shoppinglist->title }}</li><hr>
+                @foreach($shoppinglists as $shoppinglist)
+                    <li><a href="/shoppinglists/{{ $shoppinglist->id }}">{{ $shoppinglist->title }}</a></li>
                 @endforeach
             </ul>
         </div>
+        @else
+        <p class="text-center">{{ __('You need to create a Shoppinglist first') }}</p>
+        <a href="/shoppinglists/create" class="btn btn-success">{{ __('Create your first Shoppinglist') }}</a>
+        @endif
     </div>
 </div>
 
