@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::resource('/shoppinglists', 'ShoppinglistController');
 Route::get('/shoppinglists/create', 'ShoppinglistController@create');
 Route::post('/shoppinglist/store', 'ShoppinglistController@store');
+Route::post('shoppinglist/delete', 'ShoppinglistController@deleteMany');
 
 Route::post('/shoppingitem/delete', 'ShoppingitemController@deleteMany');
 Route::get('/shoppingitems/create', 'ShoppingitemController@create');
