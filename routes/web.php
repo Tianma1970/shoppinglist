@@ -17,11 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::resource('/shoppinglists', 'ShoppinglistController');
 Route::get('/shoppinglists/create', 'ShoppinglistController@create');
 Route::post('/shoppinglist/store', 'ShoppinglistController@store');
 
 Route::get('/shoppingitems/create', 'ShoppingitemController@create');
 Route::post('/shoppingitems/store', 'ShoppingitemController@store');
-
-Route::get('/shoppinglists/show/{shoppingitem}', 'ShoppinglistController@show');
