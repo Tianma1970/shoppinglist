@@ -36,7 +36,7 @@
             <div class="form-group row">
                 <label for="name" class="col-md-4 text-md-right control-label">{{ __('Name') }}</label>
                 <div class="col-md-6">
-                    <input type="textarea" name ="name" id="name" class="form-control" placeholder="Name of your Shoppinglist">
+                    <input type="textarea" name ="name" id="name" class="form-control" placeholder="Name of your Shoppingitem">
                 </div>
             </div>
             <div class="form-group row">
@@ -54,7 +54,7 @@
         <h1 class="text-center">{{ __(' Your Shoppinglists') }}</h1>
         <ul>
             @foreach($shoppinglists as $shoppinglist)
-                <li><a href="/shoppinglists/show/{{ $shoppinglist->id }}">{{ $shoppinglist->title }}</a></li>
+                <li><a href="/shoppinglists/{{ $shoppinglist->id }}">{{ $shoppinglist->title }}</a></li>
             @endforeach
         </ul>
         </div>
