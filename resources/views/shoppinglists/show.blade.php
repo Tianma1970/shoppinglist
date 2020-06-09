@@ -19,7 +19,9 @@
             </ol>
             <small><i>{{ __('list created at: ') }}{{ $shoppinglist->created_at }}</i></small>
         </div>
+        <a href="/shoppingitems/create" class=" btn btn-success">{{ __('Add some Shoppingitems') }}</a>
         <input type="submit" class=" btn btn-danger" value="Delete selected Item">
+        <a href="/shoppingitems/create" class="btn btn-info">{{ __('Back') }}</a>
     </form>
 </div>
 @endsection
