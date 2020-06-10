@@ -58,12 +58,13 @@
                 <ol>
                 @foreach($shoppinglists as $shoppinglist)
                     <li><br>
-                        <input type="checkbox" name="ids[]" value="{{ $shoppinglist->id }}"><a href="/shoppinglists/{{ $shoppinglist->id }}">&nbsp;&nbsp;{{ $shoppinglist->title }}</a></li><hr class="col-10">
+                        <input type="checkbox" name="ids[]" value="{{ $shoppinglist->id }}"><a href="/shoppinglists/{{ $shoppinglist->id }}/show">&nbsp;&nbsp;{{ $shoppinglist->title }}</a></li><hr class="col-10">
                 @endforeach
                 </ol>
             </div>
             <div class="d-flex justify-content-around col-12">
                 <a href="/shoppingitems/create" class="btn btn-info">{{ __('Add some Shoppingitems') }}</a>
+                <a href="/shoppinglists/{{ $shoppinglist->id }}" class="btn btn-info">{{ __('Edit a Shoppinglist') }}</a>
                 <input type="submit" class="btn btn-danger" value="Delete selected Shoppinglist">
             </div>
         </form>
