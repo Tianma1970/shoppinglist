@@ -8,7 +8,7 @@
 
         <h1 class="text-center">{{ __('Edit ') }}{{ $shoppingitem->name }}</h1>
 
-        <form method="POST" action="/shoppingitems/{{ $shoppingitem->id }}">
+        <form method="POST" action="/shoppingitem/{{$shoppingitem->id}}/update">
             <!--We need to set a csrf-token (Cross site request forgery)in order to send the form-->
             @csrf
             <!--/We need to set a csrf-token in order to send the form-->
