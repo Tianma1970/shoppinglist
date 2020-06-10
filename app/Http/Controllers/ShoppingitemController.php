@@ -83,15 +83,15 @@ class ShoppingitemController extends Controller
             'category'  => 'required',
             'name'      => 'required',
             'quantity'  => 'required'
-        ]);
+            ]);
 
-        $shoppingitem->category = $validData['category'];
-        $shoppingitem->name     = $validData['name'];
-        $shoppingitem->quantity = $validData['quantity'];
+            $shoppingitem->category = $validData['category'];
+            $shoppingitem->name     = $validData['name'];
+            $shoppingitem->quantity = $validData['quantity'];
 
         $shoppingitem->save();
 
-        return redirect('shoppingitems/create')->with('status', 'Shoppingitem edited successfully');
+        return redirect('/shoppingitems/create')->with('status', 'Shoppingitem edited successfully');
     }
 
     /**
