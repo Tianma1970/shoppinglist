@@ -70,7 +70,13 @@ class ShoppinglistController extends Controller
      */
     public function edit(Shoppinglist $shoppinglist)
     {
-        //
+
+        $shoppinglists = Shoppinglist::orderBy('title')->get();
+
+        return view('/shoppinglists/edit', [
+            'shoppinglists' => $shoppinglists,
+            'shoppinglist'  => $shoppinglist
+        ]);
     }
 
     /**
@@ -82,7 +88,16 @@ class ShoppinglistController extends Controller
      */
     public function update(Request $request, Shoppinglist $shoppinglist)
     {
-        //
+        //dd('update');
+        $validData = $request->validate([
+            'title' => 'required'
+        ]);
+
+        $shoppinglist->title = $validData['title'];
+
+        $shoppinglist->save();
+
+        return redirect('/shoppingitems/create')->with('status', 'Shoppinglist updated successfully');
     }
 
     /**
