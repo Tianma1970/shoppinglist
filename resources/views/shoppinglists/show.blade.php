@@ -13,7 +13,9 @@
                 <li><br>
                     <input type ="checkbox" name="ids[]" value="{{ $shoppingitem->id }}">&nbsp;{{ __('Article: ') }} {{ $shoppingitem->name}}<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;{{ __('Category: ') }}{{ $shoppingitem->category}}<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;{{ __('Quantity: ') }}{{ $shoppingitem->quantity }}<hr>
+                    &nbsp;&nbsp;&nbsp;&nbsp;{{ __('Quantity: ') }}{{ $shoppingitem->quantity }}<br>
+                    <a href="/shoppingitems/{{ $shoppingitem->id }}/edit" class="btn btn-info mt-3">Edit Shoppingitem</a>
+                    <hr>
                 </li>
                 @endforeach
             </ol>
