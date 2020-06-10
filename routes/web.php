@@ -25,3 +25,5 @@ Route::post('shoppinglist/delete', 'ShoppinglistController@deleteMany');
 Route::post('/shoppingitem/delete', 'ShoppingitemController@deleteMany');
 Route::get('/shoppingitems/create', 'ShoppingitemController@create');
 Route::post('/shoppingitems/store', 'ShoppingitemController@store');
+Route::put('/shoppingitems/{shoppingitem}', 'ShoppingitemController@update');
+Route::get('/shoppingitems/{shoppingitem}/edit', 'ShoppingitemController@edit');
