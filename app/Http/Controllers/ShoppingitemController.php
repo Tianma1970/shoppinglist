@@ -56,21 +56,6 @@ class ShoppingitemController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Shoppingitem  $shoppingitem
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Shoppingitem $shoppingitem)
-    {
-        // $shoppinglists = Shoppinglist::orderBy('title')->get();
-
-        // return view('/shoppingitems/show', [
-        //     'shoppinglists'     => $shoppinglists
-        // ]);
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Shoppingitem  $shoppingitem
@@ -78,7 +63,10 @@ class ShoppingitemController extends Controller
      */
     public function edit(Shoppingitem $shoppingitem)
     {
-        //
+        //dd($shoppingitem);
+        return view('shoppingitems/edit', [
+            'shoppingitem'  => $shoppingitem
+        ]);
     }
 
     /**
@@ -90,7 +78,20 @@ class ShoppingitemController extends Controller
      */
     public function update(Request $request, Shoppingitem $shoppingitem)
     {
-        //
+
+        $validData = $request->validate([
+            'category'  => 'required',
+            'name'      => 'required',
+            'quantity'  => 'required'
+        ]);
+
+        $shoppingitem->category = $validData['category'];
+        $shoppingitem->name     = $validData['name'];
+        $shoppingitem->quantity = $validData['quantity'];
+
+        $shoppingitem->save();
+
+        return redirect('shoppingitems/create')->with('status', 'Shoppingitem edited successfully');
     }
 
     /**
