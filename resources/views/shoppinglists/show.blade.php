@@ -11,7 +11,7 @@
             <ol>
                 @foreach($shoppinglist->shoppingitems as $shoppingitem)
                 <li><br>
-                    <input type ="checkbox" name="ids[]" value="{{ $shoppingitem->id }}">&nbsp;{{ __('Name: ') }} {{ $shoppingitem->name}}<br>
+                    <input type ="checkbox" name="ids[]" value="{{ $shoppingitem->id }}">&nbsp;{{ __('Article: ') }} {{ $shoppingitem->name}}<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;{{ __('Category: ') }}{{ $shoppingitem->category}}<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;{{ __('Quantity: ') }}{{ $shoppingitem->quantity }}<hr>
                 </li>
