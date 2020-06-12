@@ -16,7 +16,7 @@
                 <label for="category" class="col-md-4 text-md-right control-label">{{ __('Category') }}</label>
                 <div class="col-md-6">
                     <select class="form-control" name="category" id="category">
-                        <option value="">{{ __('Select a Category') }}</option>
+                        <option value="">{{ __('Select a Category (required)') }}</option>
                         <option value="food">{{ __('Food') }}</option>
                         <option value="snack">{{ __('Snack') }}</option>
                         <option value="other">{{ __('Other') }}</option>
@@ -27,7 +27,7 @@
                 <label for="shoppinglist_id" class="col-md-4 text-md-right control-label">{{ __('Shoppinglist') }}</label>
                     <div class="col-md-6">
                         <select class="form-control" name="shoppinglist_id" id="shoppinglist_id">
-                        <option value="">{{ __('Select a Shoppinglist') }}</option>
+                        <option value="">{{ __('Select a Shoppinglist (required)') }}</option>
                         @foreach($shoppinglists as $shoppinglist)
                             <option value="{{ $shoppinglist->id }}">{{ $shoppinglist->title }}
                         @endforeach
